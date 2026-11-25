@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://chqclmo8db5cm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_88hb2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88hb2"]
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.98039216, 0.5058824, 0.15686275, 1)
+
+[node name="electron" type="MeshInstance3D" unique_id=426980741]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_88hb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_88hb2")

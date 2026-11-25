@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cwbc7wt4nhgpl"]
+
+[ext_resource type="PackedScene" uid="uid://clqy55i854xcl" path="res://scenes/nucleus.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://b744kqeofknks" path="res://scripts/camera_3d.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://cmxbav617iefv" path="res://scripts/cloudgen.gd" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://chaap46vb3r1q" path="res://scripts/halve.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://c3vvk2wr1dh0y" path="res://scripts/1s.gd" id="3_tbgi4"]
+
+[sub_resource type="Resource" id="Resource_tbgi4"]
+script = ExtResource("3_tbgi4")
+metadata/_custom_type_script = "uid://c3vvk2wr1dh0y"
+
+[node name="main" type="Node3D" unique_id=712065697]
+
+[node name="nucleus" parent="." unique_id=1340666188 instance=ExtResource("1_o5qli")]
+script = ExtResource("2_jyhfs")
+cloud = SubResource("Resource_tbgi4")
+view_radius = 5.0
+instances = 1000
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=591784191 node_paths=PackedStringArray("target")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, 0, 0)
+script = ExtResource("2_0wfyh")
+target = NodePath("../nucleus")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1738757985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030048788, -0.008596212, 0.19393355)
+
+[node name="Node" type="Node" parent="." unique_id=878814228 node_paths=PackedStringArray("nucleus")]
+script = ExtResource("3_sugp2")
+nucleus = NodePath("../nucleus")

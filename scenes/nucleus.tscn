@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://clqy55i854xcl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_d8pv8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwcsv"]
+albedo_color = Color(0.8156863, 0.19215687, 0.1764706, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_g0x4b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quk00"]
+
+[node name="nucleus" type="Node3D" unique_id=1262881533]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="proton" type="MeshInstance3D" parent="." unique_id=562112756]
+transform = Transform3D(0.24835023, -0.0192599, -0.021241842, 0.019195694, 0.249257, -0.001572824, 0.02129988, -6.8562804e-05, 0.24909097, -0.10814131, 0.013911672, -0.021011299)
+mesh = SubResource("SphereMesh_d8pv8")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwcsv")
+
+[node name="neutron" type="MeshInstance3D" parent="." unique_id=629807330]
+transform = Transform3D(0.24747464, -0.01222974, -0.03326778, 0.012128314, 0.24970068, -0.0015728244, 0.033304896, -5.6991936e-05, 0.24777164, 0.029133782, 0.018507406, -0.078715354)
+mesh = SubResource("SphereMesh_g0x4b")
+surface_material_override/0 = SubResource("StandardMaterial3D_quk00")
